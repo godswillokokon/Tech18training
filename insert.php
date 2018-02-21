@@ -4,7 +4,8 @@ server with default setting (user 'root' with no password) */
 
 $link = mysqli_connect("localhost", "root", "", "training");
 // Check connection
-if($link === false){
+if($link === false)
+{
  die("ERROR: Could not connect. " . mysqli_connect_error());
 }
 
@@ -12,12 +13,19 @@ if($link === false){
 if(isset($_POST['submit'])){
 	$first_name = $_POST['first_name'];
   $last_name  = $_POST['last_name'];
+  $usernamee  = $_POST['username'];
+  $email  = $_POST['email'];
+
+
 
   // attempt insert query execution
-  $sql = "INSERT INTO users (first_name, last_name) VALUES ('$first_name', '$last_name')";
-  if(mysqli_query($link, $sql)){
+  $sql = "INSERT INTO users (first_name, last_name, usernamee, email) VALUES ('$first_name', '$last_name', '$usernamee', '$email')";
+  if(mysqli_query($link, $sql))
+  {
     echo "Records added successfully.";
-  } else{
+  }
+  else
+  {
     echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
   }
 }

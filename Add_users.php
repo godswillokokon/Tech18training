@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
@@ -7,14 +7,27 @@
   <body>
     <form action="insert.php" method="post">
       <p>
+        <label for="userName">Username:</label>
+        <input type="text" name="username" id="userName">
+      </p>
+
+      <p>
         <label for="firstName">First Name:</label>
         <input type="text" name="first_name" id="firstName">
       </p>
+
+       <p>
+        <label for="email">Email:</label>
+        <input type="text" name="email" id="email">
+      </p>
+
       <p>
         <label for="lastName">Last Name:</label>
         <input type="text" name="last_name" id="lastName">
       </p>
+
       <input type="submit" value="Submit" name="submit">
+      
     </form>
   </body>
 </html>
