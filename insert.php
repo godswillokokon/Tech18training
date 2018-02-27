@@ -2,6 +2,8 @@
 /* Attempt MySQL server connection. Assuming you are running MySQL
 server with default setting (user 'root' with no password) */
 
+include 'init.php';
+
 $link = mysqli_connect("localhost", "root", "", "training");
 // Check connection
 if($link === false)
@@ -13,13 +15,13 @@ if($link === false)
 if(isset($_POST['submit'])){
 	$first_name = $_POST['first_name'];
   $last_name  = $_POST['last_name'];
-  $usernamee  = $_POST['username'];
+  $username  = $_POST['username'];
   $email  = $_POST['email'];
 
 
 
   // attempt insert query execution
-  $sql = "INSERT INTO users (first_name, last_name, usernamee, email) VALUES ('$first_name', '$last_name', '$usernamee', '$email')";
+  $sql = "INSERT INTO users (first_name, last_name, username, email) VALUES ('$first_name', '$last_name', '$username', '$email')";
   if(mysqli_query($link, $sql))
   {
     echo "Records added successfully.";
